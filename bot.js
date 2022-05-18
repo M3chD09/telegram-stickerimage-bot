@@ -91,7 +91,12 @@ bot.on('message', function (ctx) {
     generalMsgHandler(ctx);
 });
 
-bot.startPolling();
+bot.launch({
+    webhook: {
+        domain: config.webhook,
+        port: process.env.PORT
+    }
+});
 
 function errMsgHandler(ctx, err) {
     let chatId = ctx.message.chat.id;
