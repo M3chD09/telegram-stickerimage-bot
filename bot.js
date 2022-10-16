@@ -91,6 +91,7 @@ bot.on('message', function (ctx) {
     generalMsgHandler(ctx);
 });
 
+bot.telegram.deleteWebhook();
 bot.startPolling();
 
 function errMsgHandler(ctx, err) {
