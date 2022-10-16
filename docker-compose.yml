@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  app:
+    image: 'm3chd09/telegramstickerimagebot:latest'
+    build: './'
+    volumes:
+      - './config.js:/app/config.js'
+    restart: always
