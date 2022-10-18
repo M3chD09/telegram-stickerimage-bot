@@ -1,7 +1,10 @@
 module.exports = {
-    // telegram bot token and username, get from @BotFather
+    // telegram bot token, get from @BotFather
     token: '1234567890:YOURTOKENHERE',
-    username: 'MyAwesomeStickerBot',
+
+    // if you don't want to use webhook, leave this empty
+    webhook: 'https://example.com/',
+    port: 7060,
 
     // imagemagick convert path, defaults to 'convert'
     im_convert_path: 'convert',

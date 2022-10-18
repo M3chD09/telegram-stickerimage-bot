@@ -91,8 +91,18 @@ bot.on('message', function (ctx) {
     generalMsgHandler(ctx);
 });
 
-bot.telegram.deleteWebhook();
-bot.startPolling();
+if (config.webhook != "" && config.port != "") {
+    bot.launch({
+        webhook: {
+            domain: config.webhook,
+            port: config.port
+        }
+    });
+} else {
+    bot.telegram.deleteWebhook();
+    bot.startPolling();
+}
+
 
 function errMsgHandler(ctx, err) {
     let chatId = ctx.message.chat.id;
